@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model products {
+  id                   BigInt        @id @default(autoincrement())
+  title                String        @db.VarChar(50)
+  price_in_box         Decimal       @db.Decimal
+  price_in_package     Decimal       @db.Decimal
+  in_stock             Boolean       @default(true)
+  created_at           DateTime      @default(now()) @db.Timestamptz(6)
+  updated_at           DateTime      @default(now()) @db.Timestamptz(6)
+  quantity_per_box     Int           @default(0)
+  quantity_per_package Int           @default(12)
+  code                 BigInt        @default(0)
+  imags                Json
+  category             String        @db.VarChar(50)
+  size                 String?       @db.VarChar(5)
+  orderItems           order_items[]
+}
+
+model orders {
+  id         BigInt        @id @default(autoincrement())
+  name       String        @db.VarChar(100)
+  phone      String        @db.VarChar(20)
+  address    String
+  created_at DateTime      @default(now()) @db.Timestamptz(6)
+  confirmed  Boolean       @default(false)
+  orderItems order_items[]
+}
+
+model order_items {
+  id                   BigInt   @id @default(autoincrement())
+  order_id             BigInt
+  product_id           BigInt
+  quantity_of_packages Int      @default(0)
+  quantity_of_boxs     Int      @default(0)
+  total_item_price     Decimal? @db.Decimal
+  order                orders   @relation(fields: [order_id], references: [id])
+  product              products @relation(fields: [product_id], references: [id])
+
+  @@unique([order_id, product_id])
+}
+
+model admin {
+  id        BigInt         @id @default(autoincrement())
+  user_name String         @unique
+  password  String         @unique
+  logins    admin_logins[]
+}
+
+model admin_logins {
+  id            BigInt   @id @default(autoincrement())
+  admin_id      BigInt
+  time          DateTime @default(now()) @db.Timestamptz(6)
+  hash_session  String
+  is_hash_valid Boolean  @default(false)
+  admin         admin    @relation(fields: [admin_id], references: [id])
+
+  @@index([admin_id])
+}
