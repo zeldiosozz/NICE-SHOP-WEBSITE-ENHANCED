@@ -11,7 +11,7 @@ const testimonialsData: Testimonial[] = [
     review: ` مبتطمنش على اولادي فالميه باي ادوات سباحة غير من محل نايس`,
     authorName: "ام امير و على",
     authorImg: "https://res.cloudinary.com/dj8hypsia/image/upload/v1760548674/images_2_rleztw.jpg",
-    authorRole: "مطلقة صالحة للزواج",
+    authorRole: "",
   },
   {
     review: `شركة نايس تتفوق ع شركات اجنبية بالخليج بمنتجاتها عالية الجودة الله يبارك فيهم`,
