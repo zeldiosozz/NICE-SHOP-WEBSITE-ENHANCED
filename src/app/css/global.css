@@ -575,12 +575,7 @@ color:#1C274C ;
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .product-buttons {
-    transform: translateY(0); /* تظهر فوراً */
-    opacity: 1;
-  }
-}
+
 /* ===== Header ===== */
 .cartmodal-header {
   position: sticky;
