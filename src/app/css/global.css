@@ -570,8 +570,8 @@ color:#1C274C ;
   }
 
   .btn {
-    font-size: 0.52rem;
-    padding: 0.35rem 0.7rem;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 
@@ -830,13 +830,6 @@ body.dark { background-color:#000000; color:#f3f4f6;
   
 }
 
-/* @media (hover: none) and (pointer: coarse) {
-  .product-buttons {
-    transform: translateY(0); 
-    opacity: 1;
-    transition: none;
-  }
-} */
 
 }
 
@@ -1053,12 +1046,5 @@ body.dark.red { background-color:#000000; color:#f3f4f6;
   
 }
 
-/* @media (hover: none) and (pointer: coarse) {
-  .product-buttons {
-    transform: translateY(0);
-    opacity: 1;
-    transition: none;
-  }
-} */
 
 }
