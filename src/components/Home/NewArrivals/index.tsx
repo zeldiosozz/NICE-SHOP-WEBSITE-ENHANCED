@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import ProductItem from "@/components/Common/ProductItem";
 import { Product } from "@/types/product"; // النوع اللي الكارت متوقعه
+
 const NewArrival = () => {
   const [products,setProducts] = useState<Product[]>([]);
 useEffect(() => {
@@ -18,6 +18,7 @@ useEffect(() => {
     };
     getProducts();
   }, []);   
+
   return (
     
     <section className="overflow-hidden pt-6">

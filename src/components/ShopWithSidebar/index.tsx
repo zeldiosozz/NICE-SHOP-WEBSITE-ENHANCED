@@ -28,7 +28,10 @@ const ShopWithSidebar = () => {
         if (!res.ok) throw new Error("فشل تحميل المنتجات");
         const data = await res.json();
         setProducts(data);
-        const categoryFromQuery = new URLSearchParams(window.location.search).get("category");
+const categoryFromQuery =
+  searchParams.get("category") ||
+  searchParams.get("Category");
+  const titleFromQuery = searchParams.get("title");
       let filtered = data;
       if (categoryFromQuery) {
         setSelectedCategory(categoryFromQuery);
@@ -37,6 +40,12 @@ const ShopWithSidebar = () => {
             item.category?.toLowerCase() === categoryFromQuery.toLowerCase()
         );
       }
+       else if (titleFromQuery) {
+  setSearchQuery(titleFromQuery);
+  filtered = data.filter((item) =>
+    item.title?.toLowerCase().includes(titleFromQuery.toLowerCase())
+  );
+}
         setFilteredProducts(filtered);
       } catch (err) {
         console.error("خطأ أثناء جلب المنتجات:", err);
@@ -133,8 +142,8 @@ const ShopWithSidebar = () => {
                 onClick={() => setProductSidebar(!productSidebar)}
                 className={`xl:hidden absolute -right-12.5 sm:-right-8 text-white  flex items-center justify-center w-22 h-8 rounded-md bg-blue dark:bg-[#ff00ff] dark-red:bg-[#8b1a1a] shadow-1 ${
                   stickyMenu
-                    ? "lg:top-20 sm:top-34.5 top-35"
-                    : "lg:top-24 sm:top-39 top-37"
+                    ? "lg:top-200 sm:top-34.5 top-35"
+                    : "lg:top-240 sm:top-39 top-37"
                 }`}
               >
                 <svg

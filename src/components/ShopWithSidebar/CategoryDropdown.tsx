@@ -31,7 +31,7 @@ const CategoryItem = ({ name, count, isSelected, onSelect }: CategoryItemProps) 
       <div className="flex items-center gap-2">
         <div
           className={`cursor-pointer flex items-center justify-center rounded w-4 h-4 border ${
-            isSelected ? "border-blue dark:border-[#ff00ff] dark-red:border-[#8b1a1a] bg-blue dark:bg-[#ff00ff] dark-red:bg-[#8b1a1a]" : "bg-white dark:bg-[#000000] border-gray-3 dark:border-[#ff00ff] dark:border-[#8b1a1a]"
+            isSelected ? "border-blue dark:border-[#ff00ff] dark-red:border-[#8b1a1a] bg-blue dark:bg-[#ff00ff] dark-red:bg-[#8b1a1a]" : "bg-white dark:bg-[#000000] border-gray-3 dark:border-[#ff00ff] dark-red:border-[#8b1a1a]"
           }`}
         >
           <svg

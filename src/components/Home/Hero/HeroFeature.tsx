@@ -5,22 +5,22 @@ const featureData = [
   {
     img: "https://res.cloudinary.com/dj8hypsia/image/upload/v1760984638/transportation_ciybe9.png",
     title: "Free Shipping",
-    description: "For all orders $200",
+    description: "شحن خلال 24 ~ 72 ساعة لجميع محافظات مصر",
   },
   {
     img: "https://res.cloudinary.com/dj8hypsia/image/upload/v1760984639/return-of-investment_cgote6.png",
     title: "1 & 1 Returns",
-    description: "Cancellation after 1 day",
+    description: "خدمة استرجاع المنتجات خلال 24 ساعة",
   },
   {
     img: "https://res.cloudinary.com/dj8hypsia/image/upload/v1760984637/money_1_nz6r9a.png",
     title: "100% Secure Payments",
-    description: "Gurantee secure payments",
+    description: "مدفوعات أمنة",
   },
   {
     img: "https://res.cloudinary.com/dj8hypsia/image/upload/v1761115400/headphones_eytvam.png",
     title: "24/7 Dedicated Support",
-    description: "Anywhere & anytime",
+    description: "دعم خدمة العملاء على مدار الساعة",
   },
 ];
 

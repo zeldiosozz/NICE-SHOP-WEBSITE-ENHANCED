@@ -1,8 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 const CounDown = () => {
+            const router = useRouter();
+
+      const handleClick = (item:string) => {
+      // بننط لصفحة المنتجات و بنبعت اسم الكاتيجوري كـ query
+      
+      router.push(`/shop-with-sidebar?title=${item}`);
+    };
+
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -104,7 +112,7 @@ const CounDown = () => {
             {/* <!-- Countdown timer ends --> */}
 
             <a
-              href="#"
+            onClick={()=>handleClick("كورة قدم  كبس كاس عالم 2026 مقاس 5")}
               className="inline-flex font-medium text-custom-sm text-white bg-[#3c75e0ff] dark:bg-[#ff00ff] dark:hover:bg-[#ffffff] dark:hover:text-[#ff00ff]  dark-red:bg-[#8b1a1a] dark-red:hover:bg-[#ffffff] dark-red:hover:text-[#8b1a1a] py-3 px-9.5 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
             >
               Check it Out!
