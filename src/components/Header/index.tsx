@@ -80,7 +80,7 @@ useEffect(() => {
             onClick={() => handleThemeChange("dark")}
             className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
           >
-            Dark
+            Dark Pink
           </li>
            <li
             onClick={() => handleThemeChange("dark red")}
