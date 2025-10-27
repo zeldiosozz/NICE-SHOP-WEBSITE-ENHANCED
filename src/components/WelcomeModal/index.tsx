@@ -62,7 +62,7 @@ const WelcomeModal: React.FC<WelcomeModalProps> = ({ isOpen, onClose }) => {
 
           <button
             onClick={onClose}
-            className="px-4 sm:px-6 py-2 border-2 border-blue-400 text-white bg-blue-600 font-semibold rounded-md hover:bg-blue-700 transition"
+            className="px-4 sm:px-6 py-2 border-2 border-blue-400 text-[#111] border-[#111] bg-blue-600 font-semibold rounded-md hover:bg-blue-700 transition"
           >
             ادخل للموقع
           </button>
