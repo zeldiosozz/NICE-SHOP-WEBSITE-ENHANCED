@@ -1,65 +1,43 @@
-"use client";
-import { useState, useEffect } from "react";
-import "../css/euclid-circular-a-font.css";
-import "../css/style.css";
-import Header from "../../components/Header";
-import Welcome from "../../components/WelcomeModal";
-import Footer from "../../components/Footer";
-import { ModalProvider } from "../context/QuickViewModalContext";
-import { CartModalProvider } from "../context/CartSidebarModalContext";
-import { ReduxProvider } from "@/redux/provider";
-import QuickViewModal from "@/components/Common/QuickViewModal";
-import CartSidebarModal from "@/components/Common/CartSidebarModal";
-import { PreviewSliderProvider } from "../context/PreviewSliderContext";
-import PreviewSliderModal from "@/components/Common/PreviewSlider";
-import '../css/global.css';
-import ScrollToTop from "@/components/Common/ScrollToTop";
-import PreLoader from "@/components/Common/PreLoader";
-import RunningBanner from "../../components/RunningBanner";
+import type { Metadata } from "next";
+import ClientLayout from "./ClientLayout";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [loading, setLoading] = useState<boolean>(true);
-const [welcomeOpen, setWelcomeOpen] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
+export const metadata: Metadata = {
+  title: "Nice Shop | نايـس شوب",
+  description: "نايس شوب - أفضل متجر رياضي لشراء القفازات ومنتجات القتال.",
+  verification: {
+    google: "NIu2OBiD80mqUglf4YNvQJEIM0xOyTK7RWyx3Mm7BlE",
+  },
+  keywords: [
+    "نايس شوب",
+    "nice shop",
+    "nice shop website",
+    "قفازات mma",
+    "قفازات ufc",
+    "متجر رياضي",
+  ],
+  openGraph: {
+    title: "Nice Shop | متجر القفازات الرياضية",
+    description: "أفضل متجر رياضي لشراء القفازات ومنتجات القتال.",
+    url: "https://nice-shop-website.vercel.app/",
+    siteName: "Nice Shop",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dj8hypsia/image/upload/v1759904160/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A1%D9%A0-%D9%A0%D9%A8-%D9%A0%D9%A9-%D9%A1%D9%A0-%D9%A3%D9%A2-%D9%A7%D9%A5%D9%A1_com.mi.globalbrowser-edit_bair9w.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nice Shop",
+      },
+    ],
+    locale: "ar_EG",
+    type: "website",
+  },
+};
 
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="ar" dir="rtl">
       <body>
-        {loading ? (
-          <PreLoader />
-        ) : (
-          <>
-            <ReduxProvider>
-              <CartModalProvider>
-                <ModalProvider>
-                  <PreviewSliderProvider>
-                    
-                    <Header />
-{!welcomeOpen && <RunningBanner />}
-                    
-<Welcome
-                      isOpen={welcomeOpen}
-                      onClose={() => setWelcomeOpen(false)}
-                    />                    
-                    {children}
-
-                    <QuickViewModal />
-                    <CartSidebarModal />
-                    <PreviewSliderModal />
-                  </PreviewSliderProvider>
-                </ModalProvider>
-              </CartModalProvider>
-            </ReduxProvider>
-            <ScrollToTop />
-            <Footer />
-          </>
-        )}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
