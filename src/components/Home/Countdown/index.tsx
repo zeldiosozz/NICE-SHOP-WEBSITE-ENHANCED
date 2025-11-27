@@ -130,7 +130,7 @@ const CounDown = () => {
           <Image
             src="https://res.cloudinary.com/dj8hypsia/image/upload/v1760550317/%D9%83%D9%88%D8%B1%D8%A9_%D9%82%D8%AF%D9%85__%D9%83%D8%A8%D8%B3_%D9%83%D8%A7%D8%B3_%D8%B9%D8%A7%D9%84%D9%85_2026_%D9%85%D9%82%D8%A7%D8%B3_5-removebg-preview_p4rzkv.png"
             alt="product"
-            className="hidden lg:block absolute right-4 xl:right-33 bottom-4 xl:bottom-10 -z-1"
+            className="hidden lg:block absolute left-4 xl:left-33 bottom-4 xl:bottom-10 -z-1"
             width={320}
             height={30}
           />
