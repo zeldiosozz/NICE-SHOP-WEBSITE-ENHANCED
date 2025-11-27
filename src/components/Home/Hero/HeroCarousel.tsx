@@ -45,9 +45,9 @@ const HeroCarousal = () => {
       </span>
     </div>
 
-    <h1 className="title_under_price_logo font-semibold text-xl sm:text-3xl mb-3">
+    <h2 className="title_under_price_logo font-semibold text-xl sm:text-3xl mb-3">
       <a href="#"> قفاز ملاكمة فينوم مقاس 14</a>
-    </h1>
+    </h2>
 
     <p className="title_under_under_price_logo">متوفر جميع المقاسات 8 ~ 15 بأعلى جودة عالمية</p>
 
@@ -87,9 +87,9 @@ const HeroCarousal = () => {
       </span>
     </div>
 
-    <h1 className="title_under_price_logo font-semibold text-xl sm:text-3xl mb-3">
+    <h2 className="title_under_price_logo font-semibold text-xl sm:text-3xl mb-3">
       <a href="#"> ميدالية ذهبي تايكوندو </a>
-    </h1>
+    </h2>
 
     <p className="title_under_under_price_logo"></p>
     <a
