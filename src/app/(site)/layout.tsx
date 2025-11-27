@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   },
   keywords: [
     "نايس شوب",
+    "نايس",
+    "nice",
+    "shop",
     "nice shop",
     "nice shop website",
     "قفازات mma",
