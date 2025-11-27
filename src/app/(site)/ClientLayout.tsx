@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import "../css/euclid-circular-a-font.css";
 import "../css/style.css";
@@ -12,54 +13,56 @@ import QuickViewModal from "@/components/Common/QuickViewModal";
 import CartSidebarModal from "@/components/Common/CartSidebarModal";
 import { PreviewSliderProvider } from "../context/PreviewSliderContext";
 import PreviewSliderModal from "@/components/Common/PreviewSlider";
-import '../css/global.css';
+import "../css/global.css";
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
 import RunningBanner from "../../components/RunningBanner";
+
 export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const [loading, setLoading] = useState<boolean>(true);
-const [welcomeOpen, setWelcomeOpen] = useState(true);
+  const [welcomeOpen, setWelcomeOpen] = useState(true);
+
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
-  return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body>
-        {loading ? (
-          <PreLoader />
-        ) : (
-          <>
-            <ReduxProvider>
-              <CartModalProvider>
-                <ModalProvider>
-                  <PreviewSliderProvider>
-                    
-                    <Header />
-{!welcomeOpen && <RunningBanner />}
-                    
-<Welcome
-                      isOpen={welcomeOpen}
-                      onClose={() => setWelcomeOpen(false)}
-                    />                    
-                    {children}
+  if (loading) {
+    return <PreLoader />;
+  }
 
-                    <QuickViewModal />
-                    <CartSidebarModal />
-                    <PreviewSliderModal />
-                  </PreviewSliderProvider>
-                </ModalProvider>
-              </CartModalProvider>
-            </ReduxProvider>
-            <ScrollToTop />
-            <Footer />
-          </>
-        )}
-      </body>
-    </html>
+  return (
+    <>
+      <ReduxProvider>
+        <CartModalProvider>
+          <ModalProvider>
+            <PreviewSliderProvider>
+
+              <Header />
+
+              {!welcomeOpen && <RunningBanner />}
+
+              <Welcome
+                isOpen={welcomeOpen}
+                onClose={() => setWelcomeOpen(false)}
+              />
+
+              {children}
+
+              <QuickViewModal />
+              <CartSidebarModal />
+              <PreviewSliderModal />
+
+            </PreviewSliderProvider>
+          </ModalProvider>
+        </CartModalProvider>
+      </ReduxProvider>
+
+      <ScrollToTop />
+      <Footer />
+    </>
   );
 }

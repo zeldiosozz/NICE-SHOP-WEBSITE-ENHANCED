@@ -1359,6 +1359,7 @@ export namespace Prisma {
     code: bigint | null
     category: string | null
     size: string | null
+    slug: string | null
   }
 
   export type ProductsMaxAggregateOutputType = {
@@ -1374,6 +1375,7 @@ export namespace Prisma {
     code: bigint | null
     category: string | null
     size: string | null
+    slug: string | null
   }
 
   export type ProductsCountAggregateOutputType = {
@@ -1390,6 +1392,7 @@ export namespace Prisma {
     imags: number
     category: number
     size: number
+    slug: number
     _all: number
   }
 
@@ -1425,6 +1428,7 @@ export namespace Prisma {
     code?: true
     category?: true
     size?: true
+    slug?: true
   }
 
   export type ProductsMaxAggregateInputType = {
@@ -1440,6 +1444,7 @@ export namespace Prisma {
     code?: true
     category?: true
     size?: true
+    slug?: true
   }
 
   export type ProductsCountAggregateInputType = {
@@ -1456,6 +1461,7 @@ export namespace Prisma {
     imags?: true
     category?: true
     size?: true
+    slug?: true
     _all?: true
   }
 
@@ -1559,6 +1565,7 @@ export namespace Prisma {
     imags: JsonValue
     category: string
     size: string | null
+    slug: string | null
     _count: ProductsCountAggregateOutputType | null
     _avg: ProductsAvgAggregateOutputType | null
     _sum: ProductsSumAggregateOutputType | null
@@ -1594,6 +1601,7 @@ export namespace Prisma {
     imags?: boolean
     category?: boolean
     size?: boolean
+    slug?: boolean
     orderItems?: boolean | products$orderItemsArgs<ExtArgs>
     _count?: boolean | ProductsCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["products"]>
@@ -1612,6 +1620,7 @@ export namespace Prisma {
     imags?: boolean
     category?: boolean
     size?: boolean
+    slug?: boolean
   }, ExtArgs["result"]["products"]>
 
   export type productsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1628,6 +1637,7 @@ export namespace Prisma {
     imags?: boolean
     category?: boolean
     size?: boolean
+    slug?: boolean
   }, ExtArgs["result"]["products"]>
 
   export type productsSelectScalar = {
@@ -1644,9 +1654,10 @@ export namespace Prisma {
     imags?: boolean
     category?: boolean
     size?: boolean
+    slug?: boolean
   }
 
-  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "price_in_box" | "price_in_package" | "in_stock" | "created_at" | "updated_at" | "quantity_per_box" | "quantity_per_package" | "code" | "imags" | "category" | "size", ExtArgs["result"]["products"]>
+  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "price_in_box" | "price_in_package" | "in_stock" | "created_at" | "updated_at" | "quantity_per_box" | "quantity_per_package" | "code" | "imags" | "category" | "size" | "slug", ExtArgs["result"]["products"]>
   export type productsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     orderItems?: boolean | products$orderItemsArgs<ExtArgs>
     _count?: boolean | ProductsCountOutputTypeDefaultArgs<ExtArgs>
@@ -1673,6 +1684,7 @@ export namespace Prisma {
       imags: Prisma.JsonValue
       category: string
       size: string | null
+      slug: string | null
     }, ExtArgs["result"]["products"]>
     composites: {}
   }
@@ -2110,6 +2122,7 @@ export namespace Prisma {
     readonly imags: FieldRef<"products", 'Json'>
     readonly category: FieldRef<"products", 'String'>
     readonly size: FieldRef<"products", 'String'>
+    readonly slug: FieldRef<"products", 'String'>
   }
     
 
@@ -6991,7 +7004,8 @@ export namespace Prisma {
     code: 'code',
     imags: 'imags',
     category: 'category',
-    size: 'size'
+    size: 'size',
+    slug: 'slug'
   };
 
   export type ProductsScalarFieldEnum = (typeof ProductsScalarFieldEnum)[keyof typeof ProductsScalarFieldEnum]
@@ -7211,6 +7225,7 @@ export namespace Prisma {
     imags?: JsonFilter<"products">
     category?: StringFilter<"products"> | string
     size?: StringNullableFilter<"products"> | string | null
+    slug?: StringNullableFilter<"products"> | string | null
     orderItems?: Order_itemsListRelationFilter
   }
 
@@ -7228,11 +7243,13 @@ export namespace Prisma {
     imags?: SortOrder
     category?: SortOrder
     size?: SortOrderInput | SortOrder
+    slug?: SortOrderInput | SortOrder
     orderItems?: order_itemsOrderByRelationAggregateInput
   }
 
   export type productsWhereUniqueInput = Prisma.AtLeast<{
     id?: bigint | number
+    slug?: string
     AND?: productsWhereInput | productsWhereInput[]
     OR?: productsWhereInput[]
     NOT?: productsWhereInput | productsWhereInput[]
@@ -7249,7 +7266,7 @@ export namespace Prisma {
     category?: StringFilter<"products"> | string
     size?: StringNullableFilter<"products"> | string | null
     orderItems?: Order_itemsListRelationFilter
-  }, "id">
+  }, "id" | "slug">
 
   export type productsOrderByWithAggregationInput = {
     id?: SortOrder
@@ -7265,6 +7282,7 @@ export namespace Prisma {
     imags?: SortOrder
     category?: SortOrder
     size?: SortOrderInput | SortOrder
+    slug?: SortOrderInput | SortOrder
     _count?: productsCountOrderByAggregateInput
     _avg?: productsAvgOrderByAggregateInput
     _max?: productsMaxOrderByAggregateInput
@@ -7289,6 +7307,7 @@ export namespace Prisma {
     imags?: JsonWithAggregatesFilter<"products">
     category?: StringWithAggregatesFilter<"products"> | string
     size?: StringNullableWithAggregatesFilter<"products"> | string | null
+    slug?: StringNullableWithAggregatesFilter<"products"> | string | null
   }
 
   export type ordersWhereInput = {
@@ -7537,6 +7556,7 @@ export namespace Prisma {
     imags: JsonNullValueInput | InputJsonValue
     category: string
     size?: string | null
+    slug?: string | null
     orderItems?: order_itemsCreateNestedManyWithoutProductInput
   }
 
@@ -7554,6 +7574,7 @@ export namespace Prisma {
     imags: JsonNullValueInput | InputJsonValue
     category: string
     size?: string | null
+    slug?: string | null
     orderItems?: order_itemsUncheckedCreateNestedManyWithoutProductInput
   }
 
@@ -7571,6 +7592,7 @@ export namespace Prisma {
     imags?: JsonNullValueInput | InputJsonValue
     category?: StringFieldUpdateOperationsInput | string
     size?: NullableStringFieldUpdateOperationsInput | string | null
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     orderItems?: order_itemsUpdateManyWithoutProductNestedInput
   }
 
@@ -7588,6 +7610,7 @@ export namespace Prisma {
     imags?: JsonNullValueInput | InputJsonValue
     category?: StringFieldUpdateOperationsInput | string
     size?: NullableStringFieldUpdateOperationsInput | string | null
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     orderItems?: order_itemsUncheckedUpdateManyWithoutProductNestedInput
   }
 
@@ -7605,6 +7628,7 @@ export namespace Prisma {
     imags: JsonNullValueInput | InputJsonValue
     category: string
     size?: string | null
+    slug?: string | null
   }
 
   export type productsUpdateManyMutationInput = {
@@ -7621,6 +7645,7 @@ export namespace Prisma {
     imags?: JsonNullValueInput | InputJsonValue
     category?: StringFieldUpdateOperationsInput | string
     size?: NullableStringFieldUpdateOperationsInput | string | null
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type productsUncheckedUpdateManyInput = {
@@ -7637,6 +7662,7 @@ export namespace Prisma {
     imags?: JsonNullValueInput | InputJsonValue
     category?: StringFieldUpdateOperationsInput | string
     size?: NullableStringFieldUpdateOperationsInput | string | null
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ordersCreateInput = {
@@ -7999,6 +8025,7 @@ export namespace Prisma {
     imags?: SortOrder
     category?: SortOrder
     size?: SortOrder
+    slug?: SortOrder
   }
 
   export type productsAvgOrderByAggregateInput = {
@@ -8023,6 +8050,7 @@ export namespace Prisma {
     code?: SortOrder
     category?: SortOrder
     size?: SortOrder
+    slug?: SortOrder
   }
 
   export type productsMinOrderByAggregateInput = {
@@ -8038,6 +8066,7 @@ export namespace Prisma {
     code?: SortOrder
     category?: SortOrder
     size?: SortOrder
+    slug?: SortOrder
   }
 
   export type productsSumOrderByAggregateInput = {
@@ -8980,6 +9009,7 @@ export namespace Prisma {
     imags: JsonNullValueInput | InputJsonValue
     category: string
     size?: string | null
+    slug?: string | null
   }
 
   export type productsUncheckedCreateWithoutOrderItemsInput = {
@@ -8996,6 +9026,7 @@ export namespace Prisma {
     imags: JsonNullValueInput | InputJsonValue
     category: string
     size?: string | null
+    slug?: string | null
   }
 
   export type productsCreateOrConnectWithoutOrderItemsInput = {
@@ -9057,6 +9088,7 @@ export namespace Prisma {
     imags?: JsonNullValueInput | InputJsonValue
     category?: StringFieldUpdateOperationsInput | string
     size?: NullableStringFieldUpdateOperationsInput | string | null
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type productsUncheckedUpdateWithoutOrderItemsInput = {
@@ -9073,6 +9105,7 @@ export namespace Prisma {
     imags?: JsonNullValueInput | InputJsonValue
     category?: StringFieldUpdateOperationsInput | string
     size?: NullableStringFieldUpdateOperationsInput | string | null
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type admin_loginsCreateWithoutAdminInput = {
