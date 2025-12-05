@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     "shop sport ",
     "nice shop",
     "nice sport",
+    "nice sport shop",
     "nice shop sport",
     "nice shop website",
     "nice shop website sport",
