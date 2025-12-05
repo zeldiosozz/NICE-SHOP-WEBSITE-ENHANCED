@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Nice Shop | نايـس شوب",
   description: "نايس شوب - أفضل متجر رياضي لشراء القفازات ومنتجات القتال.",
   verification: {
-    google: "NIu2OBiD80mqUglf4YNvQJEIM0xOyTK7RWyx3Mm7BlE",
+    google: "42iIGnZFgk1lgZWDcczMQUnqax4hbYGaUGmDBVZXqNE",
   },
   keywords: [
     "نايس شوب",
