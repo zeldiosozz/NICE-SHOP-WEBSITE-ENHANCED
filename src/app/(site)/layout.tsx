@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ClientLayout from "./ClientLayout";
 
 export const metadata: Metadata = {
-  title: "Nice Shop | نايـس شوب",
+  title: "Nice Sport Shop | نايـس شوب",
   description: "نايس شوب - أفضل متجر رياضي لشراء القفازات ومنتجات القتال.",
   verification: {
     google: "42iIGnZFgk1lgZWDcczMQUnqax4hbYGaUGmDBVZXqNE",
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
     "متجر رياضي",
   ],
   openGraph: {
-    title: "Nice Shop | متجر القفازات الرياضية",
+    title: "Nice Sport Shop | متجر القفازات الرياضية",
     description: "أفضل متجر رياضي لشراء القفازات ومنتجات القتال.",
-    url: "https://nice-shop-website.vercel.app/",
-    siteName: "Nice Shop",
+    url: "https://nicesportshop.com/",
+    siteName: "Nice Sport Shop",
     images: [
       {
         url: "https://res.cloudinary.com/dj8hypsia/image/upload/v1759904160/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A1%D9%A0-%D9%A0%D9%A8-%D9%A0%D9%A9-%D9%A1%D9%A0-%D9%A3%D9%A2-%D9%A7%D9%A5%D9%A1_com.mi.globalbrowser-edit_bair9w.jpg",
         width: 1200,
         height: 630,
-        alt: "Nice Shop",
+        alt: "Nice Sport Shop",
       },
     ],
     locale: "ar_EG",

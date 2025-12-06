@@ -55,62 +55,7 @@ const CounDown = () => {
               x-data="timer()"
               x-init="countdown()"
             >
-              {/* <!-- timer day --> */}
-              {/* <div>
-                <span
-                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-white shadow-2 px-4 mb-2"
-                  x-text="days"
-                >
-                  {" "}
-                  {days < 10 ? "0" + days : days}{" "}
-                </span>
-                <span className="block text-custom-sm text-dark text-center">
-                  Days
-                </span>
-              </div> */}
-
-              {/* <!-- timer hours --> */}
-              {/* <div>
-                <span
-                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-white shadow-2 px-4 mb-2"
-                  x-text="hours"
-                >
-                  {" "}
-                  {hours < 10 ? "0" + hours : hours}{" "}
-                </span>
-                <span className="block text-custom-sm text-dark text-center">
-                  Hours
-                </span>
-              </div> */}
-
-              {/* <!-- timer minutes --> */}
-              {/* <div>
-                <span
-                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-white shadow-2 px-4 mb-2"
-                  x-text="minutes"
-                >
-                  {minutes < 10 ? "0" + minutes : minutes}{" "}
-                </span>
-                <span className="block text-custom-sm text-dark text-center">
-                  Minutes
-                </span>
-              </div> */}
-
-              {/* <!-- timer seconds --> */}
-              {/* <div>
-                <span
-                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-white shadow-2 px-4 mb-2"
-                  x-text="seconds"
-                >
-                  {seconds < 10 ? "0" + seconds : seconds}{" "}
-                </span>
-                <span className="block text-custom-sm text-dark text-center">
-                  Seconds
-                </span>
-              </div> */}
             </div>
-            {/* <!-- Countdown timer ends --> */}
-
             <a
             onClick={()=>handleClick("كورة قدم  كبس كاس عالم 2026 مقاس 5")}
               className="inline-flex font-medium text-custom-sm text-white bg-[#3c75e0ff] dark:bg-[#ff00ff] dark:hover:bg-[#ffffff] dark:hover:text-[#ff00ff]  dark-red:bg-[#8b1a1a] dark-red:hover:bg-[#ffffff] dark-red:hover:text-[#8b1a1a] py-3 px-9.5 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
