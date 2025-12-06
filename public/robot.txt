@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nicesportshop.com/sitemap.xml
+Sitemap: https://www.nicesportshop.com/sitemap.xml

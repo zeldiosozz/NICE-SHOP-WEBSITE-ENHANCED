@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nice Sport Shop | متجر القفازات الرياضية",
     description: "أفضل متجر رياضي لشراء القفازات ومنتجات القتال.",
-    url: "https://nicesportshop.com/",
+    url: "https://www.nicesportshop.com/",
     siteName: "Nice Sport Shop",
     images: [
       {
